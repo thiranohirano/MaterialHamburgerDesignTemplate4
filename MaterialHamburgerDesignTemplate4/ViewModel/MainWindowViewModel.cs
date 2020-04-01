@@ -35,9 +35,18 @@ namespace MaterialHamburgerDesignTemplate4
             }
         }
 
+        private bool _DialogIsOpen;
         public bool DialogIsOpen
         {
-            get; set;
+            get { return _DialogIsOpen; }
+            set { this.SetProperty(ref _DialogIsOpen, value); }
+        }
+
+        private int _SelectedMenuIndex = 0;
+        public int SelectedMenuIndex
+        {
+            get { return _SelectedMenuIndex; }
+            set { this.SetProperty(ref _SelectedMenuIndex, value); }
         }
 
         public MainWindow mainWindow;

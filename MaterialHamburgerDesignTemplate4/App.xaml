@@ -22,6 +22,8 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.MahApps;component/Themes/MaterialDesignTheme.MahApps.WindowCommands.xaml" />
 
                 <ResourceDictionary Source="AppDictionary.xaml"/>
+                <ResourceDictionary Source="MaterialDesignCustomControlDictionary.xaml"/>
+                
             </ResourceDictionary.MergedDictionaries>
 
             <!-- MahApps Brushes -->

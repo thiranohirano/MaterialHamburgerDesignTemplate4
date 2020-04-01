@@ -18,7 +18,8 @@
         Background="{DynamicResource MaterialDesignPaper}"
         ResizeMode="CanResizeWithGrip"
         Title="{Binding Title}" Height="480" Width="640" Loaded="MainMetroWindow_Loaded" 
-        d:DataContext="{d:DesignInstance {x:Type local:MainWindowViewModel}}" TitleCaps="False" >
+        d:DataContext="{d:DesignInstance {x:Type local:MainWindowViewModel}}" 
+        TitleCaps="False" UseLayoutRounding="True">
     <Controls:MetroWindow.Resources>
         <DataTemplate x:Key="HamburgerMenuItem" DataType="{x:Type menuItems:HamburgerMenuIconItem}">
             <Grid Height="48">
@@ -62,7 +63,8 @@
             </materialDesign:PopupBox>
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
-    <materialDesign:DialogHost DialogTheme="Inherit" IsOpen="{Binding DialogIsOpen}">
+    <materialDesign:DialogHost DialogTheme="Inherit" IsOpen="{Binding DialogIsOpen}"
+                               Style="{StaticResource MaterialDesignEmbeddedQuickDialogHost}">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -72,7 +74,7 @@
             <DataGrid Visibility="Collapsed"/>
             <Grid Grid.Row="1">
                 <Controls:HamburgerMenu x:Name="HamburgerMenuControl"
-                                SelectedIndex="0"
+                                SelectedIndex="{Binding SelectedMenuIndex}"
                                 Foreground="{DynamicResource PrimaryHueMidForegroundBrush}"
                                 HamburgerWidth="48"
                                 ItemTemplate="{StaticResource HamburgerMenuItem}"
@@ -81,10 +83,10 @@
                                 OpenPaneLength="48" IsPaneOpen="False" >
                     <Controls:HamburgerMenu.Content>
                         <MultiBinding Converter="{StaticResource SelectedItemToContentConverter}">
-                            <Binding RelativeSource="{RelativeSource Self}"
+                            <Binding ElementName="HamburgerMenuControl"
                                      Mode="OneWay"
                                      Path="SelectedItem" />
-                            <Binding RelativeSource="{RelativeSource Self}"
+                            <Binding ElementName="HamburgerMenuControl"
                                      Mode="OneWay"
                                      Path="SelectedOptionsItem"/>
                         </MultiBinding>
