@@ -56,9 +56,6 @@
     <Reference Include="MaterialDialog">
       <HintPath>..\..\..\..\Visual Studio 2015\Projects\MaterialDialog\MaterialDialog\bin\Release\MaterialDialog.dll</HintPath>
     </Reference>
-    <Reference Include="MyUtilityMethods">
-      <HintPath>..\..\..\..\Visual Studio 2010\Projects\LogDefineMethod\LogDefineMethod\bin\Release\MyUtilityMethods.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />

@@ -18,7 +18,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using MaterialDialog;
-using MyUtilityMethods;
 
 namespace MaterialHamburgerDesignTemplate4
 {
@@ -39,7 +38,7 @@ namespace MaterialHamburgerDesignTemplate4
             try
             {
                 /* アセンブリバージョンが変わるときにユーザ設定を引き継ぐ */
-                var assemblyVersion = ApplicationInfo.GetVersionContainsAssembly();
+                var assemblyVersion = mwvm.GetAssemblyVersion();
                 if (Properties.Settings.Default.AssemblyVersion != assemblyVersion)
                 {
                     Properties.Settings.Default.Upgrade();

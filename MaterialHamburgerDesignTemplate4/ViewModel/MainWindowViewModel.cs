@@ -23,15 +23,7 @@ namespace MaterialHamburgerDesignTemplate4
         {
             get
             {
-                Assembly mainAssembly = Assembly.GetEntryAssembly();
-                AssemblyName mainAssemName = mainAssembly.GetName();
-                // バージョン名（AssemblyVersion属性）を取得
-                Version appVersion = mainAssemName.Version;
-                string v = appVersion.Major.ToString() + "." +
-              appVersion.Minor.ToString() + "." +
-              appVersion.Build.ToString() + "." +
-              appVersion.Revision.ToString();
-                return "Version:" + v;
+                return "Version:" + GetAssemblyVersion();
             }
         }
 
@@ -53,6 +45,19 @@ namespace MaterialHamburgerDesignTemplate4
         public MainWindowViewModel()
         {
             mainWindow = (MainWindow)Application.Current.MainWindow;
+        }
+
+        public string GetAssemblyVersion()
+        {
+            Assembly mainAssembly = Assembly.GetEntryAssembly();
+            AssemblyName mainAssemName = mainAssembly.GetName();
+            // バージョン名（AssemblyVersion属性）を取得
+            Version appVersion = mainAssemName.Version;
+            string v = appVersion.Major.ToString() + "." +
+          appVersion.Minor.ToString() + "." +
+          appVersion.Build.ToString() + "." +
+          appVersion.Revision.ToString();
+            return v;
         }
     }
 }
