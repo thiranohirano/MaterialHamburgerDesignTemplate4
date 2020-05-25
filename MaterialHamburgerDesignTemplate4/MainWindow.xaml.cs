@@ -38,7 +38,7 @@ namespace MaterialHamburgerDesignTemplate4
             try
             {
                 /* アセンブリバージョンが変わるときにユーザ設定を引き継ぐ */
-                var assemblyVersion = mwvm.GetAssemblyVersion();
+                var assemblyVersion = mwvm.Version;
                 if (Properties.Settings.Default.AssemblyVersion != assemblyVersion)
                 {
                     Properties.Settings.Default.Upgrade();

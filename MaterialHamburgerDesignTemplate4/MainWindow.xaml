@@ -133,7 +133,7 @@
             </Grid>
             <StatusBar Grid.Row="2" Background="{DynamicResource WindowTitleColorBrush}">
                 <StatusBarItem DockPanel.Dock="Right" Margin="0,0,15,0" >
-                    <TextBlock TextAlignment="Right" Text="{Binding Version}"/>
+                    <TextBlock TextAlignment="Right" Text="{Binding Version, StringFormat=Version:{0}}"/>
                 </StatusBarItem>
                 <StatusBarItem>
 

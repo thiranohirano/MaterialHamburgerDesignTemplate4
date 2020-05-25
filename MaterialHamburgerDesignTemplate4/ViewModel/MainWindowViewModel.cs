@@ -23,7 +23,7 @@ namespace MaterialHamburgerDesignTemplate4
         {
             get
             {
-                return "Version:" + GetAssemblyVersion();
+                return GetAssemblyVersion();
             }
         }
 
